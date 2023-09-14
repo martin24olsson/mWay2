@@ -1,5 +1,3 @@
-package example;
-
 import example.grammar.XpresLexer;
 import example.grammar.XpresParser;
 import org.antlr.v4.runtime.CharStream;

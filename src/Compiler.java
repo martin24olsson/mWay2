@@ -1,5 +1,3 @@
-package example;
-
 import example.grammar.XpresBaseListener;
 
 public class Compiler extends XpresBaseListener {
