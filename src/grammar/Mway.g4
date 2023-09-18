@@ -8,22 +8,44 @@ code
 ;
 
 statement
-: decl
-| assign
-| print
+: deklarera
+| tilldela
+| skrivut
+| whileLoop
 ;
 
-decl: 'var' ID;
+deklarera: 'var' ID
+;
 
-assign: ID '=' expr;
+whileLoop: 'medan' condition '{' code '}' ; // Syntax för en while-loop
 
-print: 'print' expr;
+condition: expr COMPARABLE expr ; // Uppdaterad condition-regel för jämförelseuttryck
+
+tilldela
+: ID '=' expr
+| ID '=' plus
+;
+
+plus
+: ID '+' INT
+| ID '+' ID
+| INT '+' ID
+| INT '+' INT
+;
+
+minus
+: expr '-' expr
+;
+
+skrivut: 'skriv' expr;
 
 expr
 : ID
 | INT
+| COMPARABLE
 ;
 
 ID: ('a'..'z')+ ;
 INT: ('0'..'9')+ ;
+COMPARABLE: ('<' | '>' | '==' | '!=' | '<=' | '>=');
 WS: [ \n\t\r]+ -> skip;

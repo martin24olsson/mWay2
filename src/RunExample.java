@@ -1,5 +1,6 @@
-import example.grammar.XpresLexer;
-import example.grammar.XpresParser;
+
+import grammar.MwayLexer;
+import grammar.MwayParser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -11,7 +12,7 @@ import java.util.Scanner;
 
 public class RunExample {
     public static void main(String[] args) throws IOException {
-        Compiler compiler = new Compiler();
+        MwayCompiler compiler = new MwayCompiler();
 
         String sourceFile;
         String outFile;
@@ -38,11 +39,11 @@ public class RunExample {
         // Nedan används de filer som genererats med Xpres-grammatiken. Du ersätter dessa klasser med dina egna.
 
         // Här tar vi källkoden och tar ut en ström av tokens
-        XpresLexer lexer = new XpresLexer(inputStream);
+        MwayLexer lexer = new MwayLexer(inputStream);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
 
         // Här skapar vi en parser och parsar våra tokens
-        XpresParser parser = new XpresParser(tokens);
+        MwayParser parser = new MwayParser(tokens);
 
         // Hämta ut noden som matchar den första regeln. I Xpres-fallet heter den "code"
         ParseTree tree = parser.code();

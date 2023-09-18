@@ -1,6 +1,6 @@
-import example.grammar.XpresBaseListener;
+import grammar.MwayBaseListener;
 
-public class Compiler extends XpresBaseListener {
+public class MwayCompiler extends MwayBaseListener {
 
     private StringBuilder out = new StringBuilder();
 
