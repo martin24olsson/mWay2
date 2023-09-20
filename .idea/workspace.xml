@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0185fb9-602c-45a6-a298-6863bcae3a9f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/programs/add.Mway" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RunCompiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/programs/testfil.Mway" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MwayCompiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/add.Mway" beforeDir="false" afterPath="$PROJECT_DIR$/programs/add.Mway" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MwayCompiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MwayCompiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RunCompiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunCompiler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RunExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grammar/Mway.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/Mway.g4" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +49,8 @@
     "last_opened_file_path": "/Users/misterx/Documents/GitHub/mWay2",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">

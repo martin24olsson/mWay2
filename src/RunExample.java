@@ -1,6 +1,7 @@
 
 import grammar.MwayLexer;
 import grammar.MwayParser;
+import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -60,3 +61,5 @@ public class RunExample {
         writer.close();
     }
 }
+
+

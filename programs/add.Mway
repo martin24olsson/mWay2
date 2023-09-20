@@ -1,4 +1,3 @@
-hallå fantomen;
-hallå martin;
+var martin;
 
-fantomen är 37;
+martin = 5;

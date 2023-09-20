@@ -2,6 +2,7 @@ import grammar.MwayLexer;
 import grammar.MwayParser;
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
@@ -20,8 +21,10 @@ public class RunCompiler {
         Scanner scanner = new Scanner(System.in);
         inFile = scanner.nextLine();
 
-        ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(inFile));
-        MwayLexer lexer = new MwayLexer((CharStream) input);
+        CharStream inputStream = CharStreams.fromFileName(inFile);
+
+        // ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(inputStream));
+        MwayLexer lexer = new MwayLexer(inputStream);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         MwayParser parser = new MwayParser(tokens);
         MwayParser.FileContext tree = parser.file();
@@ -32,8 +35,9 @@ public class RunCompiler {
         System.out.println("Vad ska den kompilerade filen heta?");
         outFile = scanner.nextLine();
 
-        Writer w = new OutputStreamWriter(new FileOutputStream(outFile));
+        Writer w = new OutputStreamWriter(new FileOutputStream(outFile), "US-ASCII");
         w.write(compiler.getCompiledCode());
+        w.flush();
         w.close();
 
 

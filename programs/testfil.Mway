@@ -1,0 +1,16 @@
+var i;
+var j;
+
+var martin;
+var mattias;
+
+
+i = 0;
+j = 5;
+
+medan i < 5 {
+i = i+1;
+skriv mattias;
+};
+
+skriv martin;
