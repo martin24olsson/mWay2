@@ -1,6 +1,11 @@
 import grammar.MwayLexer;
 import grammar.MwayParser;
+<<<<<<< HEAD
 import org.antlr.v4.runtime.*;
+=======
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
+>>>>>>> parent of ecea7fb (update)
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
@@ -59,5 +64,3 @@ public class RunExample {
         writer.close();
     }
 }
-
-

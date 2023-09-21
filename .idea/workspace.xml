@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0185fb9-602c-45a6-a298-6863bcae3a9f" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.idea/libraries/antlr_antlr4_runtime.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/MwayCompilerx.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/RunXpres.java" afterDir="false" />
@@ -25,6 +26,16 @@
       <change beforePath="$PROJECT_DIR$/src/grammar/MwayListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grammar/MwayParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grammar/MwayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayVisitor.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/programs/add.Mway" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RunCompiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MwayCompiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RunExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grammar/Mway.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/Mway.g4" afterDir="false" />
+>>>>>>> parent of ecea7fb (update)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +77,7 @@
     "last_opened_file_path": "/Users/Martin22/Desktop/mWay/programs",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
