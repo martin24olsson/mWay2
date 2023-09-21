@@ -16,7 +16,7 @@ public class MwayCompiler extends MwayBaseListener {
     // Skriv endast över de metoder som du verkligen behöver här
 
     public void enterFile(MwayParser.FileContext ctx) {
-        out.append("Entering program\n");
+        //out.append("Entering program\n");
     }
     /**
      * {@inheritDoc}
@@ -24,7 +24,7 @@ public class MwayCompiler extends MwayBaseListener {
      * <p>The default implementation does nothing.</p>
      */
      public void exitFile(MwayParser.FileContext ctx) {
-        out.append("Exiting program\n");
+        //out.append("Exiting program\n");
     }
     /**
      * {@inheritDoc}
@@ -32,7 +32,7 @@ public class MwayCompiler extends MwayBaseListener {
      * <p>The default implementation does nothing.</p>
      */
   public void enterCode(MwayParser.CodeContext ctx) {
-        out.append("Entering code\n");
+        //out.append("Entering code\n");
     }
     /**
      * {@inheritDoc}
@@ -40,7 +40,7 @@ public class MwayCompiler extends MwayBaseListener {
      * <p>The default implementation does nothing.</p>
      */
      public void exitCode(MwayParser.CodeContext ctx) {
-        out.append("Exiting code\n");
+        //out.append("Exiting code\n");
     }
     /**
      * {@inheritDoc}
@@ -60,7 +60,7 @@ public class MwayCompiler extends MwayBaseListener {
      * <p>The default implementation does nothing.</p>
      */
      public void enterDeklarera(MwayParser.DeklareraContext ctx) {
-        out.append("Entering decl\n");
+        //out.append("push " + ctx.getText());
     }
     /**
      * {@inheritDoc}
@@ -68,7 +68,7 @@ public class MwayCompiler extends MwayBaseListener {
      * <p>The default implementation does nothing.</p>
      */
      public void exitDeklarera(MwayParser.DeklareraContext ctx) {
-        out.append("Exiting decl\n");
+        //out.append("Exiting decl\n");
     }
     /**
      * {@inheritDoc}
@@ -100,7 +100,7 @@ public class MwayCompiler extends MwayBaseListener {
      * <p>The default implementation does nothing.</p>
      */
     @Override public void enterTilldela(MwayParser.TilldelaContext ctx) {
-        out.append("pop " + ctx.ID().getText() + "\n");
+        out.append("push " + ctx.expr().INT() + "\n");
     }
     /**
      * {@inheritDoc}

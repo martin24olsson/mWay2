@@ -1,4 +1,4 @@
-// Generated from /Users/misterx/Documents/GitHub/mWay2/src/grammar/Mway.g4 by ANTLR 4.13.1
+// Generated from /Users/Martin22/Desktop/mWay/src/grammar/Mway.g4 by ANTLR 4.13.1
 package grammar;
 
 import org.antlr.v4.runtime.ParserRuleContext;

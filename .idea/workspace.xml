@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0185fb9-602c-45a6-a298-6863bcae3a9f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/programs/testfil.Mway" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/add.Mway" beforeDir="false" afterPath="$PROJECT_DIR$/programs/add.Mway" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hejsan" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/programs/testfil.Mway" beforeDir="false" afterPath="$PROJECT_DIR$/programs/t1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MwayCompiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MwayCompiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RunCompiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunCompiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RunExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grammar/MwayBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grammar/MwayBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grammar/MwayLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grammar/MwayListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grammar/MwayParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grammar/MwayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/y" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +47,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -45,7 +55,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "new",
     "last_opened_file_path": "/Users/misterx/Documents/GitHub/mWay2",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
