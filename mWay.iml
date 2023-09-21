@@ -8,6 +8,5 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="antlr.antlr4" level="project" />
-    <orderEntry type="library" name="antlr.antlr4.runtime" level="project" />
   </component>
 </module>
