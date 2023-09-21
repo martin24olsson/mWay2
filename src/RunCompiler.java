@@ -32,9 +32,14 @@ public class RunCompiler {
         outFile = scanner.nextLine();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         Writer w = new OutputStreamWriter(new FileOutputStream(outFile), "US-ASCII");
         //w.write(compiler.getCompiledCode());
         w.flush();
+=======
+        Writer w = new OutputStreamWriter(new FileOutputStream(outFile));
+        w.write(compiler.getCompiledCode());
+>>>>>>> parent of ecea7fb (update)
 =======
         Writer w = new OutputStreamWriter(new FileOutputStream(outFile));
         w.write(compiler.getCompiledCode());
