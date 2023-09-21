@@ -1,6 +1,5 @@
 import grammar.MwayLexer;
 import grammar.MwayParser;
-import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -36,7 +35,7 @@ public class RunCompiler {
         outFile = scanner.nextLine();
 
         Writer w = new OutputStreamWriter(new FileOutputStream(outFile), "US-ASCII");
-        w.write(compiler.getCompiledCode());
+        //w.write(compiler.getCompiledCode());
         w.flush();
         w.close();
 

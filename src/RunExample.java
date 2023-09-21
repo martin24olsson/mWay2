@@ -1,12 +1,10 @@
-
 import grammar.MwayLexer;
 import grammar.MwayParser;
-import org.antlr.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
+
 
 import java.io.*;
 import java.util.Scanner;
@@ -55,7 +53,7 @@ public class RunExample {
 
         // Skriv det kompilerade programmet till en fil
         Writer writer = new OutputStreamWriter(new FileOutputStream(outFile), "US-ASCII");
-        writer.write(compiler.getCompiledCode());
+        //writer.write(compiler.getCompiledCode());
 
         writer.flush();
         writer.close();

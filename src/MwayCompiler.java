@@ -8,10 +8,7 @@ public class MwayCompiler extends MwayBaseListener {
 
     private StringBuilder out = new StringBuilder();
 
-    public MwayCompiler() {
-        this.out = out;
-        //out.append("Entering program");
-    }
+
 
     // Skriv endast över de metoder som du verkligen behöver här
 
