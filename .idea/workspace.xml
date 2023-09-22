@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0185fb9-602c-45a6-a298-6863bcae3a9f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hejsan" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/testfil.Mway" beforeDir="false" afterPath="$PROJECT_DIR$/programs/t1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MwayCompiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MwayCompiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grammar/MwayBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grammar/MwayBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayBaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grammar/MwayLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grammar/MwayListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grammar/MwayParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grammar/MwayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/y" beforeDir="false" />
-    </list>
+    <list default="true" id="d0185fb9-602c-45a6-a298-6863bcae3a9f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
