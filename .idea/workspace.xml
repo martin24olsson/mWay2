@@ -5,26 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0185fb9-602c-45a6-a298-6863bcae3a9f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/programs/readme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/programs/t3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MwayCompilerOld" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/programs/out.vm" beforeDir="false" afterPath="$PROJECT_DIR$/programs/out.vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/programs/t2" beforeDir="false" afterPath="$PROJECT_DIR$/programs/t2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MwayCompiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MwayCompiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RunCompiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunCompiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RunExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grammar/Mway.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/Mway.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grammar/Mway.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/Mway.interp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grammar/Mway.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/Mway.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grammar/MwayBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grammar/MwayBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayBaseVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grammar/MwayLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayLexer.interp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grammar/MwayLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayLexer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grammar/MwayLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayLexer.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grammar/MwayListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grammar/MwayParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grammar/MwayVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grammar/MwayVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,24 +41,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "new",
-    "last_opened_file_path": "/Users/misterx/Documents/GitHub/mWay2",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;new&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/misterx/Documents/GitHub/mWay2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/grammar" />

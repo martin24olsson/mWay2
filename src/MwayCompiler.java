@@ -4,9 +4,12 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-public class MwayCompiler extends MwayBaseListener {
+import java.util.Stack;
 
+public class MwayCompiler extends MwayBaseListener {
+    private int loopNbr = 0;
     private StringBuilder out = new StringBuilder();
+    private Stack<String> stack = new Stack<String>();
 
     public MwayCompiler() {
         this.out = out;
@@ -73,25 +76,35 @@ public class MwayCompiler extends MwayBaseListener {
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void enterWhileloop(MwayParser.WhileloopContext ctx) { }
+    @Override public void enterWhileloop(MwayParser.WhileloopContext ctx) {
+        loopNbr++;
+        out.append("label enterLoop" + loopNbr + "\n");
+    }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void exitWhileloop(MwayParser.WhileloopContext ctx) { }
+    @Override public void exitWhileloop(MwayParser.WhileloopContext ctx) {
+        out.append("goto enterLoop" + loopNbr + "\n" );
+        out.append("label exitLoop" + loopNbr + ":" + "\n");
+    }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void enterCondition(MwayParser.ConditionContext ctx) { }
+    @Override public void enterCondition(MwayParser.ConditionContext ctx) {
+    }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void exitCondition(MwayParser.ConditionContext ctx) { }
+    @Override public void exitCondition(MwayParser.ConditionContext ctx) {
+        out.append("lt\nnot\nif-goto exitLoop" + loopNbr + "\n" );
+        //out.append("goto enterLoop" + loopNbr + "\n" );
+    }
     /**
      * {@inheritDoc}
      *

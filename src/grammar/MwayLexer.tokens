@@ -11,9 +11,9 @@ INT=10
 COMPARABLE=11
 WS=12
 ';'=1
-'{'=2
-'}'=3
-'var'=4
+'var'=2
+'gor'=3
+'sluta'=4
 'medan'=5
 'skriv'=6
 '='=7
