@@ -1,1 +1,7 @@
-j = 5;
+var a = 0;
+var b = 0;
+medan a < 10 {
+  b = b + a;
+  a = a + 1;
+}
+skriv b;

@@ -11,35 +11,34 @@ statement
 : deklarera
 | tilldela
 | skrivut
-| whileLoop
+| whileloop
+| '{' statementsequence '}' //kanske ej behövs
 ;
 
-deklarera: 'var' ID
+statementsequence
+: statement ';' statementsequence ;
+
+deklarera
+: 'var' ID | 'var' tilldela
 ;
 
-whileLoop: 'medan' condition '{' code '}' ; // Syntax för en while-loop
+whileloop: 'medan' condition '{' code '}' ; // Syntax för en while-loop
 
 condition: expr COMPARABLE expr ; // Uppdaterad condition-regel för jämförelseuttryck
 
-tilldela
-: ID '=' expr
-| ID '=' plus
-;
-
-plus
-: ID '+' INT
-| ID '+' ID
-| INT '+' ID
-| INT '+' INT
-;
-
-minus
-: expr '-' expr
-;
-
 skrivut: 'skriv' expr;
 
+tilldela: ID '=' expr;
+
 expr
+: addexpr | atomicexpr
+;
+
+addexpr
+: atomicexpr '+' expr
+;
+
+atomicexpr
 : ID
 | INT
 | COMPARABLE

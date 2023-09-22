@@ -4,34 +4,44 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-public class MwayCompiler extends MwayBaseListener {
+public class MwayCompilerOld extends MwayBaseListener {
 
     private StringBuilder out = new StringBuilder();
 
-    public MwayCompiler() {
+    public MwayCompilerOld() {
         this.out = out;
         //out.append("Entering program");
     }
 
-    @Override public void enterFile(MwayParser.FileContext ctx) { }
+    // Skriv endast över de metoder som du verkligen behöver här
+
+    public void enterFile(MwayParser.FileContext ctx) {
+        //out.append("Entering program\n");
+    }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void exitFile(MwayParser.FileContext ctx) { }
+     public void exitFile(MwayParser.FileContext ctx) {
+        //out.append("Exiting program\n");
+    }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void enterCode(MwayParser.CodeContext ctx) { }
+  public void enterCode(MwayParser.CodeContext ctx) {
+        //out.append("Entering code\n");
+    }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void exitCode(MwayParser.CodeContext ctx) { }
+     public void exitCode(MwayParser.CodeContext ctx) {
+        //out.append("Exiting code\n");
+    }
     /**
      * {@inheritDoc}
      *
@@ -49,37 +59,29 @@ public class MwayCompiler extends MwayBaseListener {
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void enterStatementsequence(MwayParser.StatementsequenceContext ctx) { }
+     public void enterDeklarera(MwayParser.DeklareraContext ctx) {
+        //out.append("push " + ctx.getText());
+    }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void exitStatementsequence(MwayParser.StatementsequenceContext ctx) { }
+     public void exitDeklarera(MwayParser.DeklareraContext ctx) {
+        //out.append("Exiting decl\n");
+    }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void enterDeklarera(MwayParser.DeklareraContext ctx) { }
+    @Override public void enterWhileLoop(MwayParser.WhileLoopContext ctx) { }
     /**
      * {@inheritDoc}
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void exitDeklarera(MwayParser.DeklareraContext ctx) { }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void enterWhileloop(MwayParser.WhileloopContext ctx) { }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void exitWhileloop(MwayParser.WhileloopContext ctx) { }
+    @Override public void exitWhileLoop(MwayParser.WhileLoopContext ctx) { }
     /**
      * {@inheritDoc}
      *
@@ -97,26 +99,9 @@ public class MwayCompiler extends MwayBaseListener {
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void enterSkrivut(MwayParser.SkrivutContext ctx) { }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void exitSkrivut(MwayParser.SkrivutContext ctx) {
-        if (ctx.expr().atomicexpr().ID() != null)
-            out.append("print " + ctx.expr().atomicexpr().ID() + "\n");
-
-        if (ctx.expr().atomicexpr().INT() != null)
-            out.append("print " + ctx.expr().atomicexpr().INT() + "\n");
-    }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
     @Override public void enterTilldela(MwayParser.TilldelaContext ctx) {
-        //out.append("push " + ctx.expr().atomicexpr() + "\n");
+        out.append("push " + ctx.expr().INT() + "\n");
+        out.append("pop " + ctx.ID() + "\n");
     }
     /**
      * {@inheritDoc}
@@ -124,8 +109,45 @@ public class MwayCompiler extends MwayBaseListener {
      * <p>The default implementation does nothing.</p>
      */
     @Override public void exitTilldela(MwayParser.TilldelaContext ctx) {
-        out.append("pop " + ctx.ID() + "\n");
     }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation does nothing.</p>
+     */
+    @Override public void enterPlus(MwayParser.PlusContext ctx) { }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation does nothing.</p>
+     */
+    @Override public void exitPlus(MwayParser.PlusContext ctx) { }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation does nothing.</p>
+     */
+    @Override public void enterMinus(MwayParser.MinusContext ctx) { }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation does nothing.</p>
+     */
+    @Override public void exitMinus(MwayParser.MinusContext ctx) { }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation does nothing.</p>
+     */
+    @Override public void enterSkrivut(MwayParser.SkrivutContext ctx) {
+        out.append("print " + ctx.expr().ID() + "\n");
+    }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation does nothing.</p>
+     */
+    @Override public void exitSkrivut(MwayParser.SkrivutContext ctx) { }
     /**
      * {@inheritDoc}
      *
@@ -138,38 +160,6 @@ public class MwayCompiler extends MwayBaseListener {
      * <p>The default implementation does nothing.</p>
      */
     @Override public void exitExpr(MwayParser.ExprContext ctx) { }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void enterAddexpr(MwayParser.AddexprContext ctx) { }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void exitAddexpr(MwayParser.AddexprContext ctx) {
-        out.append("add\n");
-    }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void enterAtomicexpr(MwayParser.AtomicexprContext ctx) {
-        if (ctx.INT() != null)
-            out.append("push " + ctx.INT() + "\n");
-
-        if (ctx.ID() != null)
-            out.append("push " + ctx.ID() + "\n");
-    }
-    /**
-     * {@inheritDoc}
-     *
-     * <p>The default implementation does nothing.</p>
-     */
-    @Override public void exitAtomicexpr(MwayParser.AtomicexprContext ctx) { }
 
     /**
      * {@inheritDoc}
@@ -194,8 +184,7 @@ public class MwayCompiler extends MwayBaseListener {
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void visitErrorNode(ErrorNode node) { }
-
+     public void visitErrorNode(ErrorNode node) { }
     public String getCompiledCode() {
         //System.out.println("Här händer inte mycket");
         return out.toString();

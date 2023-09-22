@@ -53,6 +53,18 @@ public class MwayBaseListener implements MwayListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterStatementsequence(MwayParser.StatementsequenceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStatementsequence(MwayParser.StatementsequenceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterDeklarera(MwayParser.DeklareraContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -65,13 +77,13 @@ public class MwayBaseListener implements MwayListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWhileLoop(MwayParser.WhileLoopContext ctx) { }
+	@Override public void enterWhileloop(MwayParser.WhileloopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWhileLoop(MwayParser.WhileLoopContext ctx) { }
+	@Override public void exitWhileloop(MwayParser.WhileloopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -89,42 +101,6 @@ public class MwayBaseListener implements MwayListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTilldela(MwayParser.TilldelaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTilldela(MwayParser.TilldelaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterPlus(MwayParser.PlusContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPlus(MwayParser.PlusContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterMinus(MwayParser.MinusContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitMinus(MwayParser.MinusContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterSkrivut(MwayParser.SkrivutContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -137,6 +113,18 @@ public class MwayBaseListener implements MwayListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterTilldela(MwayParser.TilldelaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTilldela(MwayParser.TilldelaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExpr(MwayParser.ExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -144,6 +132,30 @@ public class MwayBaseListener implements MwayListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExpr(MwayParser.ExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAddexpr(MwayParser.AddexprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAddexpr(MwayParser.AddexprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAtomicexpr(MwayParser.AtomicexprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAtomicexpr(MwayParser.AtomicexprContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

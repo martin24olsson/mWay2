@@ -1,1 +1,8 @@
 push 5
+pop a
+push a
+push 2
+add
+pop b
+push b
+print b

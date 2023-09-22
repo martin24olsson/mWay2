@@ -17,30 +17,30 @@ public class MwayParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		ID=10, INT=11, COMPARABLE=12, WS=13;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, ID=9, 
+		INT=10, COMPARABLE=11, WS=12;
 	public static final int
-		RULE_file = 0, RULE_code = 1, RULE_statement = 2, RULE_deklarera = 3, 
-		RULE_whileLoop = 4, RULE_condition = 5, RULE_tilldela = 6, RULE_plus = 7, 
-		RULE_minus = 8, RULE_skrivut = 9, RULE_expr = 10;
+		RULE_file = 0, RULE_code = 1, RULE_statement = 2, RULE_statementsequence = 3, 
+		RULE_deklarera = 4, RULE_whileloop = 5, RULE_condition = 6, RULE_skrivut = 7, 
+		RULE_tilldela = 8, RULE_expr = 9, RULE_addexpr = 10, RULE_atomicexpr = 11;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"file", "code", "statement", "deklarera", "whileLoop", "condition", "tilldela", 
-			"plus", "minus", "skrivut", "expr"
+			"file", "code", "statement", "statementsequence", "deklarera", "whileloop", 
+			"condition", "skrivut", "tilldela", "expr", "addexpr", "atomicexpr"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "';'", "'var'", "'medan'", "'{'", "'}'", "'='", "'+'", "'-'", "'skriv'"
+			null, "';'", "'{'", "'}'", "'var'", "'medan'", "'skriv'", "'='", "'+'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, null, null, "ID", "INT", 
-			"COMPARABLE", "WS"
+			null, null, null, null, null, null, null, null, null, "ID", "INT", "COMPARABLE", 
+			"WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -125,9 +125,9 @@ public class MwayParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(22);
+			setState(24);
 			code();
-			setState(23);
+			setState(25);
 			match(EOF);
 			}
 		}
@@ -173,26 +173,26 @@ public class MwayParser extends Parser {
 		CodeContext _localctx = new CodeContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_code);
 		try {
-			setState(32);
+			setState(34);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(25);
-				statement();
-				setState(26);
-				match(T__0);
 				setState(27);
+				statement();
+				setState(28);
+				match(T__0);
+				setState(29);
 				code();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(29);
+				setState(31);
 				statement();
-				setState(30);
+				setState(32);
 				match(T__0);
 				}
 				break;
@@ -220,8 +220,11 @@ public class MwayParser extends Parser {
 		public SkrivutContext skrivut() {
 			return getRuleContext(SkrivutContext.class,0);
 		}
-		public WhileLoopContext whileLoop() {
-			return getRuleContext(WhileLoopContext.class,0);
+		public WhileloopContext whileloop() {
+			return getRuleContext(WhileloopContext.class,0);
+		}
+		public StatementsequenceContext statementsequence() {
+			return getRuleContext(StatementsequenceContext.class,0);
 		}
 		public StatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -246,35 +249,46 @@ public class MwayParser extends Parser {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_statement);
 		try {
-			setState(38);
+			setState(44);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__1:
+			case T__3:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(34);
+				setState(36);
 				deklarera();
 				}
 				break;
 			case ID:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(35);
+				setState(37);
 				tilldela();
 				}
 				break;
-			case T__8:
+			case T__5:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(36);
+				setState(38);
 				skrivut();
 				}
 				break;
-			case T__2:
+			case T__4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(37);
-				whileLoop();
+				setState(39);
+				whileloop();
+				}
+				break;
+			case T__1:
+				enterOuterAlt(_localctx, 5);
+				{
+				setState(40);
+				match(T__1);
+				setState(41);
+				statementsequence();
+				setState(42);
+				match(T__2);
 				}
 				break;
 			default:
@@ -293,8 +307,63 @@ public class MwayParser extends Parser {
 	}
 
 	@SuppressWarnings("CheckReturnValue")
+	public static class StatementsequenceContext extends ParserRuleContext {
+		public StatementContext statement() {
+			return getRuleContext(StatementContext.class,0);
+		}
+		public StatementsequenceContext statementsequence() {
+			return getRuleContext(StatementsequenceContext.class,0);
+		}
+		public StatementsequenceContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_statementsequence; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MwayListener ) ((MwayListener)listener).enterStatementsequence(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MwayListener ) ((MwayListener)listener).exitStatementsequence(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MwayVisitor ) return ((MwayVisitor<? extends T>)visitor).visitStatementsequence(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final StatementsequenceContext statementsequence() throws RecognitionException {
+		StatementsequenceContext _localctx = new StatementsequenceContext(_ctx, getState());
+		enterRule(_localctx, 6, RULE_statementsequence);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(46);
+			statement();
+			setState(47);
+			match(T__0);
+			setState(48);
+			statementsequence();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
 	public static class DeklareraContext extends ParserRuleContext {
 		public TerminalNode ID() { return getToken(MwayParser.ID, 0); }
+		public TilldelaContext tilldela() {
+			return getRuleContext(TilldelaContext.class,0);
+		}
 		public DeklareraContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -316,14 +385,29 @@ public class MwayParser extends Parser {
 
 	public final DeklareraContext deklarera() throws RecognitionException {
 		DeklareraContext _localctx = new DeklareraContext(_ctx, getState());
-		enterRule(_localctx, 6, RULE_deklarera);
+		enterRule(_localctx, 8, RULE_deklarera);
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(40);
-			match(T__1);
-			setState(41);
-			match(ID);
+			setState(54);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(50);
+				match(T__3);
+				setState(51);
+				match(ID);
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(52);
+				match(T__3);
+				setState(53);
+				tilldela();
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -338,48 +422,48 @@ public class MwayParser extends Parser {
 	}
 
 	@SuppressWarnings("CheckReturnValue")
-	public static class WhileLoopContext extends ParserRuleContext {
+	public static class WhileloopContext extends ParserRuleContext {
 		public ConditionContext condition() {
 			return getRuleContext(ConditionContext.class,0);
 		}
 		public CodeContext code() {
 			return getRuleContext(CodeContext.class,0);
 		}
-		public WhileLoopContext(ParserRuleContext parent, int invokingState) {
+		public WhileloopContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_whileLoop; }
+		@Override public int getRuleIndex() { return RULE_whileloop; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MwayListener ) ((MwayListener)listener).enterWhileLoop(this);
+			if ( listener instanceof MwayListener ) ((MwayListener)listener).enterWhileloop(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MwayListener ) ((MwayListener)listener).exitWhileLoop(this);
+			if ( listener instanceof MwayListener ) ((MwayListener)listener).exitWhileloop(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MwayVisitor ) return ((MwayVisitor<? extends T>)visitor).visitWhileLoop(this);
+			if ( visitor instanceof MwayVisitor ) return ((MwayVisitor<? extends T>)visitor).visitWhileloop(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final WhileLoopContext whileLoop() throws RecognitionException {
-		WhileLoopContext _localctx = new WhileLoopContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_whileLoop);
+	public final WhileloopContext whileloop() throws RecognitionException {
+		WhileloopContext _localctx = new WhileloopContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_whileloop);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(43);
-			match(T__2);
-			setState(44);
-			condition();
-			setState(45);
-			match(T__3);
-			setState(46);
-			code();
-			setState(47);
+			setState(56);
 			match(T__4);
+			setState(57);
+			condition();
+			setState(58);
+			match(T__1);
+			setState(59);
+			code();
+			setState(60);
+			match(T__2);
 			}
 		}
 		catch (RecognitionException re) {
@@ -423,230 +507,15 @@ public class MwayParser extends Parser {
 
 	public final ConditionContext condition() throws RecognitionException {
 		ConditionContext _localctx = new ConditionContext(_ctx, getState());
-		enterRule(_localctx, 10, RULE_condition);
+		enterRule(_localctx, 12, RULE_condition);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(49);
+			setState(62);
 			expr();
-			setState(50);
+			setState(63);
 			match(COMPARABLE);
-			setState(51);
-			expr();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	@SuppressWarnings("CheckReturnValue")
-	public static class TilldelaContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(MwayParser.ID, 0); }
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
-		}
-		public PlusContext plus() {
-			return getRuleContext(PlusContext.class,0);
-		}
-		public TilldelaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_tilldela; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MwayListener ) ((MwayListener)listener).enterTilldela(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MwayListener ) ((MwayListener)listener).exitTilldela(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MwayVisitor ) return ((MwayVisitor<? extends T>)visitor).visitTilldela(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final TilldelaContext tilldela() throws RecognitionException {
-		TilldelaContext _localctx = new TilldelaContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_tilldela);
-		try {
-			setState(59);
-			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
-			case 1:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(53);
-				match(ID);
-				setState(54);
-				match(T__5);
-				setState(55);
-				expr();
-				}
-				break;
-			case 2:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(56);
-				match(ID);
-				setState(57);
-				match(T__5);
-				setState(58);
-				plus();
-				}
-				break;
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	@SuppressWarnings("CheckReturnValue")
-	public static class PlusContext extends ParserRuleContext {
-		public List<TerminalNode> ID() { return getTokens(MwayParser.ID); }
-		public TerminalNode ID(int i) {
-			return getToken(MwayParser.ID, i);
-		}
-		public List<TerminalNode> INT() { return getTokens(MwayParser.INT); }
-		public TerminalNode INT(int i) {
-			return getToken(MwayParser.INT, i);
-		}
-		public PlusContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_plus; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MwayListener ) ((MwayListener)listener).enterPlus(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MwayListener ) ((MwayListener)listener).exitPlus(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MwayVisitor ) return ((MwayVisitor<? extends T>)visitor).visitPlus(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final PlusContext plus() throws RecognitionException {
-		PlusContext _localctx = new PlusContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_plus);
-		try {
-			setState(73);
-			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
-			case 1:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(61);
-				match(ID);
-				setState(62);
-				match(T__6);
-				setState(63);
-				match(INT);
-				}
-				break;
-			case 2:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(64);
-				match(ID);
-				setState(65);
-				match(T__6);
-				setState(66);
-				match(ID);
-				}
-				break;
-			case 3:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(67);
-				match(INT);
-				setState(68);
-				match(T__6);
-				setState(69);
-				match(ID);
-				}
-				break;
-			case 4:
-				enterOuterAlt(_localctx, 4);
-				{
-				setState(70);
-				match(INT);
-				setState(71);
-				match(T__6);
-				setState(72);
-				match(INT);
-				}
-				break;
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	@SuppressWarnings("CheckReturnValue")
-	public static class MinusContext extends ParserRuleContext {
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
-		public MinusContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_minus; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MwayListener ) ((MwayListener)listener).enterMinus(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MwayListener ) ((MwayListener)listener).exitMinus(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MwayVisitor ) return ((MwayVisitor<? extends T>)visitor).visitMinus(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final MinusContext minus() throws RecognitionException {
-		MinusContext _localctx = new MinusContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_minus);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(75);
-			expr();
-			setState(76);
-			match(T__7);
-			setState(77);
+			setState(64);
 			expr();
 			}
 		}
@@ -687,13 +556,63 @@ public class MwayParser extends Parser {
 
 	public final SkrivutContext skrivut() throws RecognitionException {
 		SkrivutContext _localctx = new SkrivutContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_skrivut);
+		enterRule(_localctx, 14, RULE_skrivut);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(79);
-			match(T__8);
-			setState(80);
+			setState(66);
+			match(T__5);
+			setState(67);
+			expr();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class TilldelaContext extends ParserRuleContext {
+		public TerminalNode ID() { return getToken(MwayParser.ID, 0); }
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public TilldelaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_tilldela; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MwayListener ) ((MwayListener)listener).enterTilldela(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MwayListener ) ((MwayListener)listener).exitTilldela(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MwayVisitor ) return ((MwayVisitor<? extends T>)visitor).visitTilldela(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final TilldelaContext tilldela() throws RecognitionException {
+		TilldelaContext _localctx = new TilldelaContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_tilldela);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(69);
+			match(ID);
+			setState(70);
+			match(T__6);
+			setState(71);
 			expr();
 			}
 		}
@@ -710,9 +629,12 @@ public class MwayParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ExprContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(MwayParser.ID, 0); }
-		public TerminalNode INT() { return getToken(MwayParser.INT, 0); }
-		public TerminalNode COMPARABLE() { return getToken(MwayParser.COMPARABLE, 0); }
+		public AddexprContext addexpr() {
+			return getRuleContext(AddexprContext.class,0);
+		}
+		public AtomicexprContext atomicexpr() {
+			return getRuleContext(AtomicexprContext.class,0);
+		}
 		public ExprContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -734,14 +656,124 @@ public class MwayParser extends Parser {
 
 	public final ExprContext expr() throws RecognitionException {
 		ExprContext _localctx = new ExprContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_expr);
+		enterRule(_localctx, 18, RULE_expr);
+		try {
+			setState(75);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(73);
+				addexpr();
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(74);
+				atomicexpr();
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class AddexprContext extends ParserRuleContext {
+		public AtomicexprContext atomicexpr() {
+			return getRuleContext(AtomicexprContext.class,0);
+		}
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public AddexprContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_addexpr; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MwayListener ) ((MwayListener)listener).enterAddexpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MwayListener ) ((MwayListener)listener).exitAddexpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MwayVisitor ) return ((MwayVisitor<? extends T>)visitor).visitAddexpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final AddexprContext addexpr() throws RecognitionException {
+		AddexprContext _localctx = new AddexprContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_addexpr);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(77);
+			atomicexpr();
+			setState(78);
+			match(T__7);
+			setState(79);
+			expr();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class AtomicexprContext extends ParserRuleContext {
+		public TerminalNode ID() { return getToken(MwayParser.ID, 0); }
+		public TerminalNode INT() { return getToken(MwayParser.INT, 0); }
+		public TerminalNode COMPARABLE() { return getToken(MwayParser.COMPARABLE, 0); }
+		public AtomicexprContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_atomicexpr; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MwayListener ) ((MwayListener)listener).enterAtomicexpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MwayListener ) ((MwayListener)listener).exitAtomicexpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MwayVisitor ) return ((MwayVisitor<? extends T>)visitor).visitAtomicexpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final AtomicexprContext atomicexpr() throws RecognitionException {
+		AtomicexprContext _localctx = new AtomicexprContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_atomicexpr);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(82);
+			setState(81);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 7168L) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 3584L) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -763,53 +795,52 @@ public class MwayParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\rU\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0004\u0001\fT\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
 		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
 		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007\u0002"+
-		"\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0001\u0000\u0001\u0000\u0001"+
-		"\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
-		"\u0001\u0001\u0001\u0003\u0001!\b\u0001\u0001\u0002\u0001\u0002\u0001"+
-		"\u0002\u0001\u0002\u0003\u0002\'\b\u0002\u0001\u0003\u0001\u0003\u0001"+
-		"\u0003\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001"+
-		"\u0004\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0006\u0001"+
-		"\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0003\u0006<\b"+
-		"\u0006\u0001\u0007\u0001\u0007\u0001\u0007\u0001\u0007\u0001\u0007\u0001"+
-		"\u0007\u0001\u0007\u0001\u0007\u0001\u0007\u0001\u0007\u0001\u0007\u0001"+
-		"\u0007\u0003\u0007J\b\u0007\u0001\b\u0001\b\u0001\b\u0001\b\u0001\t\u0001"+
-		"\t\u0001\t\u0001\n\u0001\n\u0001\n\u0000\u0000\u000b\u0000\u0002\u0004"+
-		"\u0006\b\n\f\u000e\u0010\u0012\u0014\u0000\u0001\u0001\u0000\n\fQ\u0000"+
-		"\u0016\u0001\u0000\u0000\u0000\u0002 \u0001\u0000\u0000\u0000\u0004&\u0001"+
-		"\u0000\u0000\u0000\u0006(\u0001\u0000\u0000\u0000\b+\u0001\u0000\u0000"+
-		"\u0000\n1\u0001\u0000\u0000\u0000\f;\u0001\u0000\u0000\u0000\u000eI\u0001"+
-		"\u0000\u0000\u0000\u0010K\u0001\u0000\u0000\u0000\u0012O\u0001\u0000\u0000"+
-		"\u0000\u0014R\u0001\u0000\u0000\u0000\u0016\u0017\u0003\u0002\u0001\u0000"+
-		"\u0017\u0018\u0005\u0000\u0000\u0001\u0018\u0001\u0001\u0000\u0000\u0000"+
-		"\u0019\u001a\u0003\u0004\u0002\u0000\u001a\u001b\u0005\u0001\u0000\u0000"+
-		"\u001b\u001c\u0003\u0002\u0001\u0000\u001c!\u0001\u0000\u0000\u0000\u001d"+
-		"\u001e\u0003\u0004\u0002\u0000\u001e\u001f\u0005\u0001\u0000\u0000\u001f"+
-		"!\u0001\u0000\u0000\u0000 \u0019\u0001\u0000\u0000\u0000 \u001d\u0001"+
-		"\u0000\u0000\u0000!\u0003\u0001\u0000\u0000\u0000\"\'\u0003\u0006\u0003"+
-		"\u0000#\'\u0003\f\u0006\u0000$\'\u0003\u0012\t\u0000%\'\u0003\b\u0004"+
-		"\u0000&\"\u0001\u0000\u0000\u0000&#\u0001\u0000\u0000\u0000&$\u0001\u0000"+
-		"\u0000\u0000&%\u0001\u0000\u0000\u0000\'\u0005\u0001\u0000\u0000\u0000"+
-		"()\u0005\u0002\u0000\u0000)*\u0005\n\u0000\u0000*\u0007\u0001\u0000\u0000"+
-		"\u0000+,\u0005\u0003\u0000\u0000,-\u0003\n\u0005\u0000-.\u0005\u0004\u0000"+
-		"\u0000./\u0003\u0002\u0001\u0000/0\u0005\u0005\u0000\u00000\t\u0001\u0000"+
-		"\u0000\u000012\u0003\u0014\n\u000023\u0005\f\u0000\u000034\u0003\u0014"+
-		"\n\u00004\u000b\u0001\u0000\u0000\u000056\u0005\n\u0000\u000067\u0005"+
-		"\u0006\u0000\u00007<\u0003\u0014\n\u000089\u0005\n\u0000\u00009:\u0005"+
-		"\u0006\u0000\u0000:<\u0003\u000e\u0007\u0000;5\u0001\u0000\u0000\u0000"+
-		";8\u0001\u0000\u0000\u0000<\r\u0001\u0000\u0000\u0000=>\u0005\n\u0000"+
-		"\u0000>?\u0005\u0007\u0000\u0000?J\u0005\u000b\u0000\u0000@A\u0005\n\u0000"+
-		"\u0000AB\u0005\u0007\u0000\u0000BJ\u0005\n\u0000\u0000CD\u0005\u000b\u0000"+
-		"\u0000DE\u0005\u0007\u0000\u0000EJ\u0005\n\u0000\u0000FG\u0005\u000b\u0000"+
-		"\u0000GH\u0005\u0007\u0000\u0000HJ\u0005\u000b\u0000\u0000I=\u0001\u0000"+
-		"\u0000\u0000I@\u0001\u0000\u0000\u0000IC\u0001\u0000\u0000\u0000IF\u0001"+
-		"\u0000\u0000\u0000J\u000f\u0001\u0000\u0000\u0000KL\u0003\u0014\n\u0000"+
-		"LM\u0005\b\u0000\u0000MN\u0003\u0014\n\u0000N\u0011\u0001\u0000\u0000"+
-		"\u0000OP\u0005\t\u0000\u0000PQ\u0003\u0014\n\u0000Q\u0013\u0001\u0000"+
-		"\u0000\u0000RS\u0007\u0000\u0000\u0000S\u0015\u0001\u0000\u0000\u0000"+
-		"\u0004 &;I";
+		"\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0002\u000b\u0007\u000b\u0001"+
+		"\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0003\u0001#\b\u0001\u0001"+
+		"\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001"+
+		"\u0002\u0001\u0002\u0003\u0002-\b\u0002\u0001\u0003\u0001\u0003\u0001"+
+		"\u0003\u0001\u0003\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0003"+
+		"\u00047\b\u0004\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0001"+
+		"\u0005\u0001\u0005\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0001"+
+		"\u0007\u0001\u0007\u0001\u0007\u0001\b\u0001\b\u0001\b\u0001\b\u0001\t"+
+		"\u0001\t\u0003\tL\b\t\u0001\n\u0001\n\u0001\n\u0001\n\u0001\u000b\u0001"+
+		"\u000b\u0001\u000b\u0000\u0000\f\u0000\u0002\u0004\u0006\b\n\f\u000e\u0010"+
+		"\u0012\u0014\u0016\u0000\u0001\u0001\u0000\t\u000bN\u0000\u0018\u0001"+
+		"\u0000\u0000\u0000\u0002\"\u0001\u0000\u0000\u0000\u0004,\u0001\u0000"+
+		"\u0000\u0000\u0006.\u0001\u0000\u0000\u0000\b6\u0001\u0000\u0000\u0000"+
+		"\n8\u0001\u0000\u0000\u0000\f>\u0001\u0000\u0000\u0000\u000eB\u0001\u0000"+
+		"\u0000\u0000\u0010E\u0001\u0000\u0000\u0000\u0012K\u0001\u0000\u0000\u0000"+
+		"\u0014M\u0001\u0000\u0000\u0000\u0016Q\u0001\u0000\u0000\u0000\u0018\u0019"+
+		"\u0003\u0002\u0001\u0000\u0019\u001a\u0005\u0000\u0000\u0001\u001a\u0001"+
+		"\u0001\u0000\u0000\u0000\u001b\u001c\u0003\u0004\u0002\u0000\u001c\u001d"+
+		"\u0005\u0001\u0000\u0000\u001d\u001e\u0003\u0002\u0001\u0000\u001e#\u0001"+
+		"\u0000\u0000\u0000\u001f \u0003\u0004\u0002\u0000 !\u0005\u0001\u0000"+
+		"\u0000!#\u0001\u0000\u0000\u0000\"\u001b\u0001\u0000\u0000\u0000\"\u001f"+
+		"\u0001\u0000\u0000\u0000#\u0003\u0001\u0000\u0000\u0000$-\u0003\b\u0004"+
+		"\u0000%-\u0003\u0010\b\u0000&-\u0003\u000e\u0007\u0000\'-\u0003\n\u0005"+
+		"\u0000()\u0005\u0002\u0000\u0000)*\u0003\u0006\u0003\u0000*+\u0005\u0003"+
+		"\u0000\u0000+-\u0001\u0000\u0000\u0000,$\u0001\u0000\u0000\u0000,%\u0001"+
+		"\u0000\u0000\u0000,&\u0001\u0000\u0000\u0000,\'\u0001\u0000\u0000\u0000"+
+		",(\u0001\u0000\u0000\u0000-\u0005\u0001\u0000\u0000\u0000./\u0003\u0004"+
+		"\u0002\u0000/0\u0005\u0001\u0000\u000001\u0003\u0006\u0003\u00001\u0007"+
+		"\u0001\u0000\u0000\u000023\u0005\u0004\u0000\u000037\u0005\t\u0000\u0000"+
+		"45\u0005\u0004\u0000\u000057\u0003\u0010\b\u000062\u0001\u0000\u0000\u0000"+
+		"64\u0001\u0000\u0000\u00007\t\u0001\u0000\u0000\u000089\u0005\u0005\u0000"+
+		"\u00009:\u0003\f\u0006\u0000:;\u0005\u0002\u0000\u0000;<\u0003\u0002\u0001"+
+		"\u0000<=\u0005\u0003\u0000\u0000=\u000b\u0001\u0000\u0000\u0000>?\u0003"+
+		"\u0012\t\u0000?@\u0005\u000b\u0000\u0000@A\u0003\u0012\t\u0000A\r\u0001"+
+		"\u0000\u0000\u0000BC\u0005\u0006\u0000\u0000CD\u0003\u0012\t\u0000D\u000f"+
+		"\u0001\u0000\u0000\u0000EF\u0005\t\u0000\u0000FG\u0005\u0007\u0000\u0000"+
+		"GH\u0003\u0012\t\u0000H\u0011\u0001\u0000\u0000\u0000IL\u0003\u0014\n"+
+		"\u0000JL\u0003\u0016\u000b\u0000KI\u0001\u0000\u0000\u0000KJ\u0001\u0000"+
+		"\u0000\u0000L\u0013\u0001\u0000\u0000\u0000MN\u0003\u0016\u000b\u0000"+
+		"NO\u0005\b\u0000\u0000OP\u0003\u0012\t\u0000P\u0015\u0001\u0000\u0000"+
+		"\u0000QR\u0007\u0000\u0000\u0000R\u0017\u0001\u0000\u0000\u0000\u0004"+
+		"\",6K";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

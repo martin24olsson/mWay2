@@ -1,0 +1,14 @@
+
+t2 fil används som exempel i uppgiftsbeskrivning på Canvas
+
+t3 fil används i föreläsning att bygga kompilator '20:08
+
+den ska ge output
+push 5
+pop a
+push a
+push 2
+add
+pop b
+push b
+print b

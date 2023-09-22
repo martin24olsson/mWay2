@@ -29,17 +29,23 @@ public interface MwayVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStatement(MwayParser.StatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link MwayParser#statementsequence}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStatementsequence(MwayParser.StatementsequenceContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link MwayParser#deklarera}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitDeklarera(MwayParser.DeklareraContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MwayParser#whileLoop}.
+	 * Visit a parse tree produced by {@link MwayParser#whileloop}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitWhileLoop(MwayParser.WhileLoopContext ctx);
+	T visitWhileloop(MwayParser.WhileloopContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MwayParser#condition}.
 	 * @param ctx the parse tree
@@ -47,33 +53,33 @@ public interface MwayVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCondition(MwayParser.ConditionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MwayParser#tilldela}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTilldela(MwayParser.TilldelaContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link MwayParser#plus}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPlus(MwayParser.PlusContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link MwayParser#minus}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMinus(MwayParser.MinusContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link MwayParser#skrivut}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitSkrivut(MwayParser.SkrivutContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link MwayParser#tilldela}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTilldela(MwayParser.TilldelaContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link MwayParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExpr(MwayParser.ExprContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link MwayParser#addexpr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAddexpr(MwayParser.AddexprContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link MwayParser#atomicexpr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAtomicexpr(MwayParser.AtomicexprContext ctx);
 }
